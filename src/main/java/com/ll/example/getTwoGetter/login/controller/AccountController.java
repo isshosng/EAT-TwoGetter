@@ -45,8 +45,9 @@ public class AccountController {
 
 
     @GetMapping("/login")
-    public String login(@RequestParam(value = "error", required = false) String err, Model model){
+    public String login(@RequestParam(value = "error", required = false) String err, Model model, RedirectAttributes rttr){
         if(err!=null){
+            rttr.addFlashAttribute("modifyTry", "false");
             model.addAttribute("message", "아이디나 비밀번호가 일치하지 않습니다.");
         }
         return "account/login";
@@ -142,7 +143,7 @@ public class AccountController {
             rttr.addFlashAttribute("modifyTry", "true");
         }else{
             rttr.addFlashAttribute("modifyTry", "false");
-            rttr.addFlashAttribute("message", "존재하지않는 이메일입니다.");
+            rttr.addFlashAttribute("message", "존재하지 않는 이메일입니다.");
             return "redirect:/account/login";
         }
         return "redirect:/account/login";
