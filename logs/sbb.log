@@ -5373,3 +5373,34 @@ org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property o
 2022-09-26 02:41:55.291  INFO 41309 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-09-26 02:41:55.291  INFO 41309 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-09-26 02:41:55.292  INFO 41309 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-26 02:57:47.550  INFO 4888 --- [restartedMain] c.l.e.g.GetTwoGetterApplication          : Starting GetTwoGetterApplication using Java 17.0.3 on DESKTOP-O2G9IM7 with PID 4888 (C:\spring\getTwoGetter\getTwoGetter\out\production\classes started by root in C:\spring\getTwoGetter\getTwoGetter)
+2022-09-26 02:57:47.551  INFO 4888 --- [restartedMain] c.l.e.g.GetTwoGetterApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-09-26 02:57:47.736  INFO 4888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-09-26 02:57:47.736  INFO 4888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-09-26 02:57:48.530  INFO 4888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-26 02:57:48.618  INFO 4888 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 4 JPA repository interfaces.
+2022-09-26 02:57:49.217  INFO 4888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-09-26 02:57:49.224  INFO 4888 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-09-26 02:57:49.225  INFO 4888 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-26 02:57:49.324  INFO 4888 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-09-26 02:57:49.324  INFO 4888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1587 ms
+2022-09-26 02:57:49.504  INFO 4888 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-26 02:57:49.545  INFO 4888 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-26 02:57:49.674  INFO 4888 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-26 02:57:49.766  INFO 4888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-09-26 02:57:50.004  INFO 4888 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-09-26 02:57:50.022  INFO 4888 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-09-26 02:57:50.604  INFO 4888 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-26 02:57:50.612  INFO 4888 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-26 02:57:51.243  INFO 4888 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4fe5f23c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7feb602d, org.springframework.security.web.context.SecurityContextPersistenceFilter@459f8caf, org.springframework.security.web.header.HeaderWriterFilter@1e39c499, org.springframework.security.web.authentication.logout.LogoutFilter@5c8a39, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@512ba1d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12e9d3f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c398a34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73c2430c, org.springframework.security.web.session.SessionManagementFilter@690d1c06, org.springframework.security.web.access.ExceptionTranslationFilter@25618797, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1714e548]
+2022-09-26 02:57:51.302  WARN 4888 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-26 02:57:51.473  INFO 4888 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-09-26 02:57:51.963  INFO 4888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-09-26 02:57:52.034  INFO 4888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-26 02:57:52.050  INFO 4888 --- [restartedMain] c.l.e.g.GetTwoGetterApplication          : Started GetTwoGetterApplication in 4.831 seconds (JVM running for 5.668)
+2022-09-26 02:58:08.847  INFO 4888 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-26 02:58:08.847  INFO 4888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-09-26 02:58:08.849  INFO 4888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-09-26 03:02:38.697  INFO 4888 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-26 03:02:38.700  INFO 4888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-09-26 03:02:38.705  INFO 4888 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
