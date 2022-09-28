@@ -20,16 +20,10 @@ public class BoardDtoDistance {
     private String content;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
-
     private String username;
-
     private String lng;
-
     private String lat;
-
     private double distance;
-
-
 
     public static BoardDtoDistance addBoardAndDistance(Board board, Double distance) {
         BoardDtoDistance boardDtoDistance = new BoardDtoDistance();

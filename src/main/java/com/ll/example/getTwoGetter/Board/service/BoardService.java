@@ -1,7 +1,9 @@
-//글쓰기 Form에서 내용을 입력한 뒤, '글쓰기' 버튼을 누르면 Post 형식으로 요청이 오고,
-//BoardService의 savePost()를 실행하게 됩니다.
-package com.ll.example.getTwoGetter.Board.service;
+/**
+글쓰기 Form에서 내용을 입력한 뒤, '글쓰기' 버튼을 누르면 Post 형식으로 요청이 오고,
+BoardService의 savePost()를 실행하게 됩니다.
+ */
 
+package com.ll.example.getTwoGetter.Board.service;
 
 import com.ll.example.getTwoGetter.Board.domain.entity.Board;
 import com.ll.example.getTwoGetter.Board.domain.repository.BoardRepository;
@@ -44,14 +46,15 @@ public class BoardService {
     @Transactional
     public PageResult<BoardDtoDistance> getBoardList(int page, String latitude, String longitude) {
 
+//        Long totalCount = boardRepository.count(); //화면상 페이지 버튼 처리를 위한 total count 계산
 
         // boardList 가져오기 (가까운 순으로) -> @Query() 어노테션 사용해서 구현 (마이타비스도 가능한듯)
         List<Board> boardList = boardRepository.getArticle(BoardConstants.PAGE_SIZE,
                 (page-1) * BoardConstants.PAGE_SIZE, latitude,longitude);
         List<Double> distances = boardRepository.getArticle2(BoardConstants.PAGE_SIZE,
                 (page-1) * BoardConstants.PAGE_SIZE, latitude,longitude);
-        Long totalCount = Long.valueOf(boardList.size()); //화면상 페이지 버튼 처리를 위한 total count 계산
 
+        Long totalCount = Long.valueOf(boardList.size());
 
         List<BoardDtoDistance> boardDtoDistances = new ArrayList<>();
 //        BoardDtoDistance[] boardDtoDistances = BoardDtoDistance.getBoardDtoDistances(boardList, distances);
@@ -59,13 +62,10 @@ public class BoardService {
         for(int i=0; i<boardList.size(); i++){
             Double distance = distances.get(i);
             Board board = boardList.get(i);
+            System.out.println("거리 : "+distance+", 게시판 : "+board.getTitle());
             BoardDtoDistance boardDtoDistance =BoardDtoDistance.addBoardAndDistance(board, distance);
             boardDtoDistances.add(i, boardDtoDistance);
         }
-
-
-
-
 
 
 //        Stream
