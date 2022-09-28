@@ -28,5 +28,10 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
             "AS distance "+"from board b having distance < 1.5 order by distance asc limit ?2, ?1", nativeQuery = true)
     List<Double> getArticle2(int limit, int offset, String lat, String lng);
 
+    @Query(value = "select " +
+            "(6371*ACOS(COS(RADIANS(?1)) * COS(RADIANS(b.lat)) * COS(RADIANS(b.lng)-RADIANS(?2)) + SIN(RADIANS(?1)) * SIN(RADIANS(b.lat)))) " +
+            "AS distance "+"from board b having distance < 1.5 order by distance", nativeQuery = true)
+    List<Double> getArticle3(String lat, String lng);
+
     List<Board> findByUsername(String nickname);
 }

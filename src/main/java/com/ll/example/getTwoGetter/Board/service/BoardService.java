@@ -45,16 +45,15 @@ public class BoardService {
 
     @Transactional
     public PageResult<BoardDtoDistance> getBoardList(int page, String latitude, String longitude) {
-
-//        Long totalCount = boardRepository.count(); //화면상 페이지 버튼 처리를 위한 total count 계산
-
         // boardList 가져오기 (가까운 순으로) -> @Query() 어노테션 사용해서 구현 (마이타비스도 가능한듯)
         List<Board> boardList = boardRepository.getArticle(BoardConstants.PAGE_SIZE,
                 (page-1) * BoardConstants.PAGE_SIZE, latitude,longitude);
         List<Double> distances = boardRepository.getArticle2(BoardConstants.PAGE_SIZE,
                 (page-1) * BoardConstants.PAGE_SIZE, latitude,longitude);
 
-        Long totalCount = Long.valueOf(boardList.size());
+        List<Double> account = boardRepository.getArticle3(latitude,longitude);
+        Long size = Long.valueOf(account.size());
+        Long totalCount = size;
 
         List<BoardDtoDistance> boardDtoDistances = new ArrayList<>();
 //        BoardDtoDistance[] boardDtoDistances = BoardDtoDistance.getBoardDtoDistances(boardList, distances);
