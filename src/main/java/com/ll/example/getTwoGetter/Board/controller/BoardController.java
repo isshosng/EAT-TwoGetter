@@ -5,21 +5,18 @@ package com.ll.example.getTwoGetter.Board.controller;
 
 
 import com.ll.example.getTwoGetter.Board.domain.entity.Board;
-import com.ll.example.getTwoGetter.Board.domain.repository.BoardRepository;
 import com.ll.example.getTwoGetter.Board.dto.BoardDto;
 import com.ll.example.getTwoGetter.Board.service.BoardService;
 import com.ll.example.getTwoGetter.Board.model.PageResult;
 import com.ll.example.getTwoGetter.login.Service.UserService;
 import com.ll.example.getTwoGetter.login.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 import com.ll.example.getTwoGetter.exception.DataNotFoundException;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -31,16 +28,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 
 @Controller
+@RequiredArgsConstructor
 public class BoardController {
 
-    private BoardService boardService;
+    private final BoardService boardService;
 
-    @Autowired
-    UserService userService;
-
-    public BoardController(BoardService boardService) {
-        this.boardService = boardService;
-    }
+    private final UserService userService;
 
 
     @GetMapping("/board") //view용 컨트롤러
@@ -65,12 +58,9 @@ public class BoardController {
     @GetMapping("/boards")
     public ResponseEntity<PageResult> getBoards(@RequestParam int page, @RequestParam String latitude,
                                                 @RequestParam String longitude) {
-        System.out.println(1);
-        List<Double> boardDistance = boardService.getDistanceAsc(latitude, longitude, page);
-        System.out.println(2);
-        PageResult pageResult = boardService.getBoardList(page, latitude, longitude, boardDistance);
+//        List<Double> boardDistance = boardService.getDistanceAsc(latitude, longitude, page);
+        PageResult pageResult = boardService.getBoardList(page, latitude, longitude);
         // rest-api controller 응답값으로는 ResponseEntity를 사용하는 것이 좋다고함
-        System.out.println(3);
 
         return ResponseEntity.ok().body(pageResult);
 
