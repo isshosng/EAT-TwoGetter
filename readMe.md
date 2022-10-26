@@ -69,7 +69,7 @@
 
 #### - 프론트엔드
 
-* Javascript
+* Html, CSS, Javascript
 * Thymeleaf
 
 <br>
@@ -80,7 +80,7 @@
 * 시큐리티
 * 페이징
 * Git 버전관리
-* AWS EC2배포
+* AWS Lightsail배포
 * Kakao Map API
 * Google G-mail API
 
@@ -359,4 +359,6 @@ https://drive.google.com/file/d/1x9wstf0LwKbG-AJhUOlsTEAFDBSbvaG3/view
 
 * 서비스 고도화
   * 프로필 사진 파일업로드 가능하도록 구현
+  * 채팅방 AJAX => 웹 소켓 구현
+  
 
