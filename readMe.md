@@ -1,3 +1,4 @@
+### 멋쟁이사자 백엔드스쿨 해커톤
 # ideaBANK -  eatTwoGetter
 <img src="https://user-images.githubusercontent.com/107593020/192379736-10117707-1169-463d-9475-1d2297bdb8c5.png" style="zoom:30"/>
 
@@ -349,6 +350,8 @@
 
 https://www.youtube.com/watch?v=i3RMGNMNdJk&feature=youtu.be
 
+### 📣 발표자료
+https://drive.google.com/file/d/1x9wstf0LwKbG-AJhUOlsTEAFDBSbvaG3/view
 <br>
 <hr>
 
